@@ -1,4 +1,4 @@
-const express = require('express');
+ const express = require('express');
 const {Server} = require('socket.io');
 const http = require('http');
 // CORS stands for Cross-Origin Resource Sharing. it is use to share  resource in cross origine.
@@ -17,14 +17,9 @@ const io = new Server( server,{
     methods: ["GET", "POST"]
   }
 });
-// cors: {
-//     origin: "http://localhost:3000",
-//     methods: ["GET", "POST"]
-//   }
-// });
  
-app.get("/", (req,res)=>{
-    res.send("Beckend chat app");
+app.get("/", (req, res) => {
+  res.send("Backend of Gap-Sap-App by Aman Singh"); res.end()
 })
 
 io.on("connection", (socket) => {
@@ -41,5 +36,7 @@ io.on("connection", (socket) => {
   });
  
 
-// server.listen(8000,()=> console.log("server ready at port 8000"))
-server.listen(process.env.PORT||8000,()=> console.log(`GAP_SAP Backend APP started at port ${port}`))
+ 
+const port = process.env.PORT || 4500
+
+server.listen(port, console.log(`App started at port ${port}`))
