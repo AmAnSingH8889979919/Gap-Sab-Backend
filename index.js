@@ -23,7 +23,7 @@ app.get("/", (req, res) => {
 })
 
 io.on("connection", (socket) => {
-    // console.log(socket.id); // x8WIv7-mJelg7on_ALbx
+    console.log(socket.id); // x8WIv7-mJelg7on_ALbx
 
     // for room connection
     socket.on("roomConnection", room => socket.join(room))
