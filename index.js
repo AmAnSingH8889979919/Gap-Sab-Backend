@@ -13,8 +13,9 @@ const server = http.createServer(app);
 
 const io = new Server( server,{
     cors: {
-    origin: "https://startling-lily-67aaf1.netlify.app/",
-    methods: ["GET", "POST"]
+//     origin: "https://startling-lily-67aaf1.netlify.app/",
+//     methods: ["GET", "POST"]
+     transports: ["websocket", "polling"]
   }
 });
  
